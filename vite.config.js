@@ -3,6 +3,7 @@ import { ViteEjsPlugin } from "vite-plugin-ejs";
 import path from "path";
 
 export default defineConfig({
+  base: process.env.NODE_ENV === "production" ? "/F8-Project-Module-1" : "/",
   root: "src",
   publicDir: "../public",
   build: {
