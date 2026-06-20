@@ -1,0 +1,63 @@
+@use "../variables" as *;
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondary;
+  color: $white;
+  font-weight: 600;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease-in-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    scale: 0;
+    z-index: -1;
+    background-color: $white;
+    transition: scale 0.3s ease-in-out;
+  }
+
+  &:hover {
+    color: $secondary;
+    &::after {
+      scale: 1;
+    }
+  }
+
+  &--large {
+    width: 330px;
+  }
+  &--medium {
+    width: 242px;
+  }
+  &--small {
+    width: 166px;
+  }
+
+  &--secondary {
+    background-color: $white;
+    color: $secondary;
+
+    &::after {
+      background-color: $secondary;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &--tertiary {
+    &::after {
+      background-color: $tertiary;
+    }
+    &:hover {
+      color: $white;
+    }
+  }
+}

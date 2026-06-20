@@ -10,7 +10,7 @@ $container-max-widths: (
   xxl: 1140px,
 );
 $grid-columns: 12 !default;
-$grid-gutter-width: 30px !default;
+$grid-gutter-width: 24px !default;
 $gutters: (
   0: 0,
   1: 0.25,
@@ -19,6 +19,8 @@ $gutters: (
   4: 1.5,
   5: 3,
 );
+
+$displays: none, block, flex;
 
 %gutter-padding {
   padding-left: calc(var(--grid-gutter-x) * 0.5);
@@ -81,14 +83,17 @@ $gutters: (
   }
 }
 
-@mixin make-offsets($infix: null) {
+@mixin make-offsets($infix: "") {
   @for $i from 0 to $grid-columns {
     .offset#{$infix}-#{$i} {
-      margin-left: if($i > 0, math.div(100%, $grid-columns) * $i, 0);
+      @if $i > 0 {
+        margin-left: math.div(100%, $grid-columns) * $i;
+      } @else {
+        margin-left: 0;
+      }
     }
   }
 }
-
 @mixin make-gutters($infix: null) {
   @each $i, $ratio in $gutters {
     .g#{$infix}-#{$i},
@@ -103,6 +108,14 @@ $gutters: (
   }
 }
 
+@mixin make-displays($infix: "") {
+  @each $display in $displays {
+    .d#{$infix}-#{$display} {
+      display: $display !important;
+    }
+  }
+}
+
 @include make-row-columns();
 
 @include make-columns();
@@ -110,6 +123,8 @@ $gutters: (
 @include make-offsets();
 
 @include make-gutters();
+
+@include make-displays("");
 
 @each $breakpoint, $dimension in variables.$grid-breakpoints {
   $max-width: map.get($container-max-widths, $breakpoint);
@@ -127,5 +142,7 @@ $gutters: (
     @include make-offsets($infix);
 
     @include make-gutters($infix);
+
+    @include make-displays($infix);
   }
 }
