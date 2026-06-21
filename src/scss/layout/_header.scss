@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../mixins" as *;
 
 .header {
   padding-top: 30px;
@@ -51,5 +52,14 @@
   &__link--bold {
     font-weight: 700;
     font-size: 2.2rem;
+  }
+}
+
+@include screen(md) {
+  .header .row {
+    justify-content: space-between;
+  }
+  .hamburger-icon i {
+    font-size: 2.8rem;
   }
 }

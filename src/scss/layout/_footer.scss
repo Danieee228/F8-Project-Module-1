@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "../mixins" as *;
 
 .footer {
   background-color: $black;
@@ -91,5 +92,12 @@
         color: $white;
       }
     }
+  }
+}
+
+@include screen(md) {
+  .footer-top {
+    padding-top: 30px;
+    padding-bottom: 20px;
   }
 }

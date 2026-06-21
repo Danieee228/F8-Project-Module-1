@@ -7,11 +7,11 @@
 @use "./layout/header";
 @use "./layout/footer";
 
-// Pages
-@use "./pages/home";
-@use "./pages/about";
-
 // Components
 @use "./components/buttons";
 @use "./components/forms";
 @use "./components/course-item";
+
+// Pages
+@use "./pages/home";
+@use "./pages/about";

@@ -1,6 +1,7 @@
 @use "sass:map";
 @use "sass:math";
 @use "../variables";
+@use "../mixins" as *;
 
 $container-max-widths: (
   sm: 100%,
@@ -31,7 +32,7 @@ $displays: none, block, flex;
   --grid-gutter-x: #{$grid-gutter-width};
   --grid-gutter-y: 0;
 
-  width: 1370px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   @extend %gutter-padding;
@@ -39,7 +40,7 @@ $displays: none, block, flex;
 
 .container {
   @extend .container-fluid;
-  width: 1370px;
+  width: 1320px;
 }
 
 .row {
@@ -144,5 +145,11 @@ $displays: none, block, flex;
     @include make-gutters($infix);
 
     @include make-displays($infix);
+  }
+}
+
+.reverse-md {
+  @include screen(md) {
+    flex-direction: column-reverse;
   }
 }
