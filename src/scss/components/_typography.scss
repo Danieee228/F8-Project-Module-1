@@ -1,0 +1,44 @@
+@use "../variables" as *;
+// --- TYPOGRAPHY DÙNG CHUNG ---
+.title {
+  font-size: 4.2rem;
+  line-height: 5.2rem;
+  margin-bottom: 18px;
+  &--white {
+    color: $white;
+  }
+}
+
+.subtitle,
+.desc {
+  font-weight: 400;
+  max-width: 470px;
+}
+
+.subtitle {
+  margin-bottom: 6px;
+  &--dark {
+    color: $black;
+  }
+  &--gray {
+    color: $gray;
+  }
+  &--orange {
+    color: $secondary;
+  }
+  &--white {
+    color: $white;
+  }
+}
+
+.desc {
+  &--center {
+    text-align: center;
+  }
+  &--gray {
+    color: $gray;
+  }
+  &--white {
+    color: $white;
+  }
+}

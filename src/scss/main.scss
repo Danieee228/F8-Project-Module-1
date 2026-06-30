@@ -9,9 +9,15 @@
 
 // Components
 @use "./components/buttons";
-@use "./components/forms";
-@use "./components/course-item";
-
+@use "./components/typography";
+@use "./components/services-card";
+@use "./components/member-card";
+@use "./components/testimonial-card";
+@use "./components/blog-card";
+@use "./components/accordion";
 // Pages
 @use "./pages/home";
 @use "./pages/about";
+
+// Animations
+@use "./animation";
