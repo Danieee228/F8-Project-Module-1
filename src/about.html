@@ -1,25 +1,184 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>About</title>
-    <%- include('./partials/head.ejs') %> 
+    <%- include('./partials/head.ejs') %>
   </head>
   <body>
-    <%- include('./partials/header.ejs') %>
-    <h1>About Us</h1>
-    <p>
-      We are a team of passionate developers dedicated to creating amazing web
-      applications. Our mission is to deliver high-quality software that meets
-      the needs of our users and exceeds their expectations.
-    </p>
+    <main class="about-page">
+      <div class="hero-wrapper">
+        <!-- Header -->
+        <%- include('./partials/header.ejs') %>
+        <!-- Hero Section -->
+        <section class="hero">
+          <div class="container">
+            <div class="hero__content">
+              <!-- Hero Content -->
+              <h3 class="hero__subtitle subtitle subtitle--dark">
+                WHAT WE ARE
+              </h3>
+              <h1 class="hero__title">Seriously unbelievable client service</h1>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Core Wrapper -->
+      <div class="core-wrapper">
+        <!-- Identity Section -->
+        <section class="identity">
+          <div class="container">
+            <div class="row">
+              <!-- Identity Content -->
+              <div class="col-5">
+                <div class="identity__content">
+                  <h3 class="subtitle subtitle--gray">WHO WE ARE</h3>
+                  <h2 class="title">We look at the law differently</h2>
+                  <p class="identity-text desc desc--gray">
+                    By cooperating with over 100 lawyers across the region, our
+                    original values remain an integral part of our philosophy
+                    and approach to client work. We are perfectly placed to take
+                    you through.
+                  </p>
+                  <a
+                    href="#!"
+                    class="btn btn--small btn--tertiary"
+                  >
+                    More Details</a
+                  >
+                </div>
+              </div>
+              <!-- Identity Image -->
+              <div class="col-6 offset-1">
+                <div class="identity__image">
+                  <img
+                    src="/asset/img/about/img-member1.png"
+                    alt="About Us"
+                    class="identity__img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Expertise Section -->
+        <section class="expertise">
+          <div class="container">
+            <div class="row">
+              <!-- Expertise Image -->
+              <div class="col-6">
+                <div class="expertise__image">
+                  <img
+                    src="/asset/img/about/img-member2.png"
+                    alt="About Us"
+                    class="expertise__img"
+                  />
+                </div>
+              </div>
+              <!-- Expertise Content -->
+              <div class="col-5 offset-1">
+                <div class="expertise__content">
+                  <h3 class="subtitle subtitle--gray">WHAT WE DO</h3>
+                  <h2 class="title">Defining success together</h2>
+                  <p class="expertise-text desc desc--gray">
+                    The synergy between our real estate and banking and finance
+                    teams provides our clients with particular expertise on real
+                    estate project finance in each of the countries in our
+                    region.
+                  </p>
+                  <a
+                    href="#!"
+                    class="btn btn--small btn--tertiary"
+                  >
+                    More Details</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Overview Section -->
+        <section class="overview">
+          <div class="container">
+            <div class="overview__list">
+              <div class="stat-item">
+                <span class="stat-item__label">COMPANY FOUNDED</span>
+                <span class="stat-item__value">1984</span>
+              </div>
+
+              <div class="stat-item">
+                <span class="stat-item__label">CASES SOLVED</span>
+                <span class="stat-item__value">2450</span>
+              </div>
+
+              <div class="stat-item">
+                <span class="stat-item__label">HAPPY CLIENTS</span>
+                <span class="stat-item__value">98%</span>
+              </div>
+
+              <div class="stat-item">
+                <span class="stat-item__label">AWARDS WON</span>
+                <span class="stat-item__value">150</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Meet Us -->
+      <section class="meet-us">
+        <div class="container">
+          <!-- Meet Us Content -->
+          <div class="meet-us__content">
+            <h3 class="subtitle subtitle--orange">MEET US</h3>
+            <h2 class="title title--white">Our team</h2>
+            <p class="desc desc--gray">
+              Lawyers provide best legal advice under competitive terms.
+            </p>
+          </div>
+          <!-- Meet Us Team -->
+          <div class="row row-cols-3">
+            <div class="col">
+              <!-- Team Member 1 -->
+              <div class="meet-us__team">
+                <img
+                  src="/asset/img/about/img-team-member1.jpg"
+                  alt="Member 1"
+                  class="meet-us__img"
+                />
+                <h4 class="meet-us__name">Anna Torpey</h4>
+                <p class="meet-us__position">HEAD OF LEARNING</p>
+              </div>
+            </div>
+            <div class="col">
+              <!-- Team Member 2 -->
+              <div class="meet-us__team">
+                <img
+                  src="/asset/img/about/img-team-member2.jpg"
+                  alt="Member 2"
+                  class="meet-us__img"
+                />
+                <h4 class="meet-us__name">Jonathan Kane</h4>
+                <p class="meet-us__position">PARTNER</p>
+              </div>
+            </div>
+            <div class="col">
+              <!-- Team Member 3 -->
+              <div class="meet-us__team">
+                <img
+                  src="/asset/img/about/img-team-member3.jpg"
+                  alt="Member 3"
+                  class="meet-us__img"
+                />
+                <h4 class="meet-us__name">Mark Johnson</h4>
+                <p class="meet-us__position">ASSOCIATE</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <%- include('./partials/footer.ejs') %>
+    </main>
+    <script
+      type="module"
+      src="./main.js"
+    ></script>
   </body>
-  <script
-    type="module"
-    src="./main.js"
-  ></script>
 </html>

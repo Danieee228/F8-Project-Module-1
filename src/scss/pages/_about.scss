@@ -1,0 +1,163 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+@mixin identity-expertise-block {
+  padding-bottom: 150px;
+
+  .row {
+    align-items: center;
+  }
+  &-text {
+    margin-bottom: 30px;
+  }
+
+  &__image {
+    position: relative;
+    width: 570px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 273px;
+      height: 300px;
+      background-color: $secondary;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: -30px;
+      width: 273px;
+      height: 300px;
+      background-color: $tertiary;
+      z-index: 1;
+    }
+  }
+
+  &__img {
+    display: block;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+}
+
+.about-page {
+  .hero-wrapper {
+    padding-bottom: 100px;
+  }
+  .hero {
+    padding-top: 75px;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+    &__subtitle {
+      text-transform: uppercase;
+    }
+    &__title {
+      max-width: 670px;
+      margin: 0 auto;
+    }
+  }
+  .identity {
+    @include identity-expertise-block;
+  }
+
+  .expertise {
+    @include identity-expertise-block;
+    &__img {
+      transform: scaleX(-1);
+    }
+  }
+
+  .overview {
+    &__list {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      background-color: $secondary;
+    }
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 55px 0;
+
+    &__label {
+      font-size: 1.8rem;
+      color: $white;
+      font-weight: 400;
+      line-height: 3rem;
+      text-transform: uppercase;
+    }
+    &__value {
+      font-size: 6rem;
+      font-weight: 800;
+      line-height: 7rem;
+      color: $white;
+      font-family: $heading-font;
+    }
+  }
+
+  .meet-us {
+    padding: 100px 0;
+    background-color: $black;
+    margin-bottom: 150px;
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 70px;
+    }
+    &__team {
+      background-color: $white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 50px 0 100px;
+    }
+
+    &__img {
+      width: 200px;
+      max-width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 50%;
+      border: 2px solid transparent;
+    }
+
+    &__name {
+      font-size: 4.2rem;
+      font-weight: 700;
+      line-height: 5.2rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+
+    &__position {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 3rem;
+      color: $gray;
+      text-transform: uppercase;
+    }
+  }
+}
