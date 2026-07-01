@@ -13,7 +13,8 @@
 
   &__image {
     position: relative;
-    width: 570px;
+    width: 100%;
+    max-width: 570px;
 
     &::before {
       content: "";
@@ -48,7 +49,9 @@
   }
 }
 
+// --- ABOUT PAGE ---
 .about-page {
+  // --- HERO ---
   .hero-wrapper {
     padding-bottom: 100px;
   }
@@ -71,18 +74,23 @@
   }
   .identity {
     @include identity-expertise-block;
+    &__image {
+      margin-left: auto;
+      margin-right: 30px;
+    }
   }
 
   .expertise {
     @include identity-expertise-block;
-    &__image {
-      margin-left: 30px;
-    }
     &__img {
       transform: scaleX(-1);
     }
+    &__image {
+      margin-left: 30px;
+    }
   }
 
+  // --- OVERVIEW ---
   .overview {
     &__list {
       display: flex;
@@ -93,6 +101,7 @@
     }
   }
 
+  // --- STATISTICS ---
   .stat-item {
     display: flex;
     flex-direction: column;
@@ -116,6 +125,7 @@
     }
   }
 
+  // --- MEET US ---
   .meet-us {
     padding: 100px 0;
     background-color: $black;
@@ -134,7 +144,8 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 50px 0 100px;
+      padding: 50px 20px 100px;
+      height: 100%;
     }
 
     &__img {
@@ -161,6 +172,32 @@
       line-height: 3rem;
       color: $gray;
       text-transform: uppercase;
+    }
+  }
+}
+
+@include screen(md) {
+  .about-page {
+    .hero-wrapper {
+      padding: 0;
+    }
+    .hero {
+      padding: 45px 0;
+    }
+    .identity {
+      padding-bottom: 75px;
+      overflow: hidden;
+
+      &__content {
+        padding-bottom: 60px;
+      }
+    }
+    .expertise {
+      padding-bottom: 75px;
+      overflow: hidden;
+      &__content {
+        padding-bottom: 60px;
+      }
     }
   }
 }
