@@ -55,7 +55,15 @@
   }
 }
 
-@include screen(md) {
+@include screen(xl) {
+  .nav-header {
+    &__list {
+      justify-content: space-around;
+    }
+  }
+}
+
+@include screen(lg) {
   .header .row {
     justify-content: space-between;
   }

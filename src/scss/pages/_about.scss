@@ -75,6 +75,9 @@
 
   .expertise {
     @include identity-expertise-block;
+    &__image {
+      margin-left: 30px;
+    }
     &__img {
       transform: scaleX(-1);
     }

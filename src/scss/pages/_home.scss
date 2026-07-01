@@ -302,11 +302,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 85px 30px;
+    padding: 20px;
 
     &__img {
       display: block;
-      max-width: 100%;
+      max-width: 60%;
       max-height: 100%;
       object-fit: contain;
     }
@@ -440,7 +440,6 @@
     margin-bottom: 38px;
   }
 }
-
 
 @include screen(md) {
   .subtitle {
