@@ -1,0 +1,84 @@
+@use "../variables" as *;
+.accordion-item {
+  border-bottom: 1px solid #dbe1e3;
+  transition:
+    margin 0.4s ease-in-out,
+    box-shadow 0.4s ease-in-out,
+    border-radius 0.4s ease-in-out;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    cursor: pointer;
+  }
+
+  &:last-child &__header {
+    border-bottom: none;
+  }
+
+  &__icon {
+    width: 28px;
+    height: 28px;
+    background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    transition: background-color 0.3s ease-in-out;
+    i {
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  &__input:checked ~ &__header &__icon {
+    background-color: $secondary;
+    i {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    line-height: 3.2rem;
+    font-weight: 700;
+    font-family: "Manrope", sans-serif;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease-in-out;
+  }
+
+  &__inner {
+    overflow: hidden;
+    padding: 0 30px;
+    transition: padding 0.4s ease-in-out;
+  }
+
+  &__input:checked ~ &__content {
+    grid-template-rows: 1fr;
+    .accordion-item__inner {
+      padding: 0 30px 30px 30px;
+    }
+  }
+
+  &:has(.accordion-item__input:checked) {
+    box-shadow: 0px 20px 70px 0px #0e141212;
+    background-color: $white;
+    border-top: none;
+    border-bottom: none;
+    margin-bottom: 30px;
+    border-radius: 4px;
+
+    & + .accordion-item:not(:has(.accordion-item__input:checked)) {
+      border-top: 1px solid #dbe1e3;
+    }
+  }
+
+  &__desc {
+    max-width: none;
+  }
+}

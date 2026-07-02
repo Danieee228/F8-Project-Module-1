@@ -1,50 +1,6 @@
 @use "../variables" as *;
 @use "../mixins" as *;
 
-// --- TYPOGRAPHY DÙNG CHUNG ---
-.title {
-  font-size: 4.2rem;
-  line-height: 5.2rem;
-  margin-bottom: 18px;
-  &--white {
-    color: $white;
-  }
-}
-
-.subtitle,
-.desc {
-  font-weight: 400;
-  max-width: 470px;
-}
-
-.subtitle {
-  margin-bottom: 6px;
-  &--dark {
-    color: $black;
-  }
-  &--gray {
-    color: $gray;
-  }
-  &--orange {
-    color: $secondary;
-  }
-  &--white {
-    color: $white;
-  }
-}
-
-.desc {
-  &--center {
-    text-align: center;
-  }
-  &--gray {
-    color: $gray;
-  }
-  &--white {
-    color: $white;
-  }
-}
-
 // --- HERO SECTION ---
 .hero-wrapper {
   display: flex;
@@ -231,31 +187,6 @@
   }
 }
 
-.services-card {
-  position: relative;
-  overflow: hidden;
-
-  &:hover &__img {
-    transform: scale(1.1);
-  }
-
-  &__img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    transition: transform 0.6s ease-in-out;
-  }
-
-  &__btn {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 40px);
-  }
-}
-
 // --- FEATURES ---
 .features {
   overflow: hidden;
@@ -353,54 +284,6 @@
   margin-bottom: 55px;
 }
 
-.member-card {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  &:hover .member-media__img {
-    transform: scale(1.1);
-  }
-}
-
-.member-media {
-  position: relative;
-  overflow: hidden;
-
-  &__img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    object-position: top;
-    transition: transform 0.6s ease-in-out;
-  }
-
-  &__link {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 30px;
-  }
-}
-
-.member-information {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &__name {
-    font-size: 2.2rem;
-    font-weight: 700;
-    line-height: 3.2rem;
-    color: $white;
-  }
-  &__position {
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    color: $gray;
-  }
-}
-
 // --- AWARDS ---
 .awards {
   padding: 100px 0;
@@ -419,11 +302,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 85px 30px;
+    padding: 20px;
 
     &__img {
       display: block;
-      max-width: 100%;
+      max-width: 60%;
       max-height: 100%;
       object-fit: contain;
     }
@@ -517,36 +400,6 @@
   }
 }
 
-.testimonial-card {
-  border: 1px solid #e6efec;
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  transition:
-    box-shadow 0.3s ease-in-out,
-    border-color 0.3s ease-in-out;
-
-  &:hover {
-    box-shadow: 0px 20px 70px 0px #0e141212;
-    border-color: transparent;
-  }
-
-  i {
-    font-size: 2.4rem;
-    color: #fed464;
-    margin-bottom: 12px;
-  }
-}
-
-.testimonial-quote {
-  font-weight: 400;
-  font-size: 1.8rem;
-  line-height: 3rem;
-  color: $gray;
-  margin-bottom: 30px;
-}
-
 // --- FAQ ---
 .faq {
   padding-bottom: 150px;
@@ -565,166 +418,12 @@
   }
 }
 
-.accordion-item {
-  border-bottom: 1px solid #dbe1e3;
-  transition:
-    margin 0.4s ease-in-out,
-    box-shadow 0.4s ease-in-out,
-    border-radius 0.4s ease-in-out;
-
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-    cursor: pointer;
-  }
-
-  &:last-child &__header {
-    border-bottom: none;
-  }
-
-  &__icon {
-    width: 28px;
-    height: 28px;
-    background-color: $black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: $white;
-    transition: background-color 0.3s ease-in-out;
-    i {
-      transition: transform 0.3s ease-in-out;
-    }
-  }
-
-  &__input:checked ~ &__header &__icon {
-    background-color: $secondary;
-    i {
-      transform: rotate(180deg);
-    }
-  }
-
-  &__title {
-    font-size: 2.2rem;
-    line-height: 3.2rem;
-    font-weight: 700;
-    font-family: "Manrope", sans-serif;
-  }
-
-  &__content {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.4s ease-in-out;
-  }
-
-  &__inner {
-    overflow: hidden;
-    padding: 0 30px;
-    transition: padding 0.4s ease-in-out;
-  }
-
-  &__input:checked ~ &__content {
-    grid-template-rows: 1fr;
-    .accordion-item__inner {
-      padding: 0 30px 30px 30px;
-    }
-  }
-
-  &:has(.accordion-item__input:checked) {
-    box-shadow: 0px 20px 70px 0px #0e141212;
-    background-color: $white;
-    border-top: none;
-    border-bottom: none;
-    margin-bottom: 30px;
-    border-radius: 4px;
-
-    & + .accordion-item:not(:has(.accordion-item__input:checked)) {
-      border-top: 1px solid #dbe1e3;
-    }
-  }
-
-  &__desc {
-    max-width: none;
-  }
-}
-
 // --- BLOGS ---
 .blogs-top {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 70px;
-}
-
-.blog-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-
-  &__media-link {
-    display: block;
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
-
-  &:hover &__img {
-    scale: 1.1;
-  }
-
-  &__img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    transition: scale 0.6s ease-in-out;
-  }
-
-  &__media {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-
-  &__avatar {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: top;
-  }
-
-  &__info {
-    display: flex;
-    flex-direction: column;
-  }
-  &__author {
-    font-weight: 600;
-  }
-  &__position {
-    font-size: 1.6rem;
-    line-height: 2.8rem;
-    color: $gray;
-  }
-
-  &__title {
-    font-size: 2.2rem;
-    line-height: 3.2rem;
-    font-weight: 700;
-    margin-bottom: 12px;
-  }
-
-  &__link {
-    align-self: flex-start;
-    padding-right: 12px;
-    margin-top: auto;
-    font-weight: 600;
-    transition: color 0.3s ease-in-out;
-    &:hover {
-      color: $secondary;
-    }
-  }
 }
 
 // --- CTA ---
@@ -739,15 +438,6 @@
   }
   &-desc {
     margin-bottom: 38px;
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
