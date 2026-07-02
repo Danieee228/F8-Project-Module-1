@@ -171,22 +171,6 @@
   padding: 150px 0;
 }
 
-.services {
-  margin-bottom: 150px;
-  &-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 70px;
-  }
-  &-list {
-    margin-bottom: 55px;
-  }
-  &-bottom {
-    text-align: center;
-  }
-}
-
 // --- FEATURES ---
 .features {
   overflow: hidden;
@@ -424,21 +408,6 @@
   align-items: flex-end;
   justify-content: space-between;
   margin-bottom: 70px;
-}
-
-// --- CTA ---
-.cta {
-  padding: 100px 0;
-  background-color: $tertiary;
-
-  &-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  &-desc {
-    margin-bottom: 38px;
-  }
 }
 
 @include screen(md) {

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head.ejs') %>
+  </head>
+  <body>
+    <main class="practice-page">
+      <div class="hero-wrapper">
+        <!-- Header -->
+        <%- include('./partials/header.ejs') %>
+        <!-- Hero Section -->
+        <section class="hero">
+          <div class="container">
+            <div class="hero__content">
+              <!-- Hero Content -->
+              <h3 class="hero__subtitle subtitle subtitle--dark">
+                #Practice Areas
+              </h3>
+              <h1 class="hero__title">Our Practice Areas to Serve You</h1>
+              <p class="hero__desc desc">
+                Where every injury is personal. We are a different kind of law
+                firm. Let our small, passionate group of trial lawyers fight for
+                your rights!
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- Services -->
+      <%- include('./partials/services.ejs') %>
+      <!-- CTA -->
+      <%- include('./partials/cta.ejs') %>
+      <!-- Footer -->
+      <%- include('./partials/footer.ejs') %>
+    </main>
+    <script
+      type="module"
+      src="./main.js"
+    ></script>
+  </body>
+</html>
