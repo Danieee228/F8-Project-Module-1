@@ -47,7 +47,10 @@
                 </div>
               </div>
               <!-- Identity Image -->
-              <div class="col-6 offset-1 col-md-12 offset-md-0">
+              <div
+                class="col-6 offset-1 col-md-12 offset-md-0"
+                data-aos="fade-left"
+              >
                 <div class="identity__image">
                   <img
                     src="/asset/img/about/img-member1.png"
@@ -64,7 +67,10 @@
           <div class="container">
             <div class="row reverse-md">
               <!-- Expertise Image -->
-              <div class="col-6 col-md-12">
+              <div
+                class="col-6 col-md-12"
+                data-aos="fade-right"
+              >
                 <div class="expertise__image">
                   <img
                     src="/asset/img/about/img-member2.png"
@@ -138,37 +144,112 @@
             <div class="col">
               <!-- Team Member 1 -->
               <div class="meet-us__team">
-                <img
-                  src="/asset/img/about/img-team-member1.jpg"
-                  alt="Member 1"
-                  class="meet-us__img"
-                />
+                <div class="meet-us__avatar">
+                  <img
+                    src="/asset/img/about/img-team-member1.jpg"
+                    alt="Member 1"
+                    class="meet-us__img"
+                  />
+                </div>
                 <h4 class="meet-us__name">Anna Torpey</h4>
                 <p class="meet-us__position">HEAD OF LEARNING</p>
+
+                <div class="meet-us__socials">
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-facebook"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-linkedin"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-twitter"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-instagram"></i
+                  ></a>
+                </div>
               </div>
             </div>
             <div class="col">
               <!-- Team Member 2 -->
               <div class="meet-us__team">
-                <img
-                  src="/asset/img/about/img-team-member2.jpg"
-                  alt="Member 2"
-                  class="meet-us__img"
-                />
+                <div class="meet-us__avatar">
+                  <img
+                    src="/asset/img/about/img-team-member2.jpg"
+                    alt="Member 2"
+                    class="meet-us__img"
+                  />
+                </div>
                 <h4 class="meet-us__name">Jonathan Kane</h4>
                 <p class="meet-us__position">PARTNER</p>
+
+                <div class="meet-us__socials">
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-facebook"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-linkedin"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-twitter"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-instagram"></i
+                  ></a>
+                </div>
               </div>
             </div>
             <div class="col">
               <!-- Team Member 3 -->
               <div class="meet-us__team">
-                <img
-                  src="/asset/img/about/img-team-member3.jpg"
-                  alt="Member 3"
-                  class="meet-us__img"
-                />
+                <div class="meet-us__avatar">
+                  <img
+                    src="/asset/img/about/img-team-member3.jpg"
+                    alt="Member 3"
+                    class="meet-us__img"
+                  />
+                </div>
                 <h4 class="meet-us__name">Mark Johnson</h4>
                 <p class="meet-us__position">ASSOCIATE</p>
+
+                <div class="meet-us__socials">
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-facebook"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-linkedin"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-twitter"></i
+                  ></a>
+                  <a
+                    href="#"
+                    class="meet-us__socials-link"
+                    ><i class="fa-brands fa-square-instagram"></i
+                  ></a>
+                </div>
               </div>
             </div>
           </div>
@@ -176,6 +257,10 @@
       </section>
       <%- include('./partials/footer.ejs') %>
     </main>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script
       type="module"
       src="./main.js"

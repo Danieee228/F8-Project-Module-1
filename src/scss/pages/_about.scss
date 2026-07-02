@@ -144,8 +144,21 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 50px 20px 100px;
+      padding: 50px 20px 70px;
       height: 100%;
+      position: relative;
+      transition: all 0.3s ease;
+
+      &:hover {
+        .meet-us__img {
+          border-color: $secondary;
+        }
+        .meet-us__socials {
+          opacity: 1;
+          visibility: visible;
+          transform: scale(1);
+        }
+      }
     }
 
     &__img {
@@ -156,6 +169,41 @@
       object-position: top;
       border-radius: 50%;
       border: 2px solid transparent;
+      padding: 4px;
+      transition: border-color 0.3s ease;
+    }
+
+    &__socials {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+
+      width: calc(100% - 40px);
+      max-width: 240px;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      background-color: #f2f2f2;
+      padding: 10px 0;
+
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(0.9);
+      transition: all 0.4s ease;
+
+      &-link {
+        font-size: 2rem;
+        color: $black;
+        transition: color 0.3s;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
     }
 
     &__name {
