@@ -83,8 +83,10 @@
       &-list {
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 16px;
       }
+
       &-link {
         width: 48px;
         height: 48px;
