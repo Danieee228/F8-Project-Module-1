@@ -2,13 +2,24 @@
 <header class="header">
   <div class="container">
     <div class="row">
+      <!-- Toggle checkbox -->
+      <input
+        type="checkbox"
+        id="menu-checkbox"
+        class="menu-checkbox"
+      />
       <!-- Hamburger menu -->
       <label
         for="menu-checkbox"
-        class="hamburger-icon d-none d-lg-block"
+        class="hamburger-icon"
       >
         <i class="fa-solid fa-bars"></i>
       </label>
+      <!-- Overlay -->
+      <label
+        for="menu-checkbox"
+        class="nav-overlay"
+      ></label>
       <!-- Logo -->
       <div class="col-1 d-lg-none">
         <a
@@ -23,11 +34,22 @@
         </a>
       </div>
       <!-- Navigation -->
-      <div
-        class="col-6 offset-2 col-xl-8 offset-xl-0 col-lg-7 offset-lg-1 d-lg-none"
-      >
+      <div class="nav-wrapper col-6 offset-2 col-xl-8 offset-xl-0">
+        <label
+          for="menu-checkbox"
+          class="nav-close"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </label>
         <nav class="nav-header">
           <ul class="nav-header__list">
+            <input
+              type="radio"
+              name="mobile-submenu"
+              id="submenu-reset"
+              class="submenu-toggle"
+              checked
+            />
             <li class="nav-header__item">
               <a
                 href="../index.html"
@@ -46,27 +68,123 @@
               </a>
             </li>
             <li class="nav-header__item">
+              <input
+                type="radio"
+                name="mobile-submenu"
+                id="submenu-practice"
+                class="submenu-toggle"
+              />
               <a
-                href="../practice-area.html"
+                href="#!"
                 class="nav-header__link"
                 >Practice Areas
-                <i class="fa-solid fa-angle-down"></i>
               </a>
+              <label
+                for="submenu-practice"
+                class="submenu-arrow submenu-arrow--open"
+              >
+                <i class="fa-solid fa-angle-down"></i>
+              </label>
+              <label
+                for="submenu-reset"
+                class="submenu-arrow submenu-arrow--close"
+              >
+                <i class="fa-solid fa-angle-up"></i>
+              </label>
+              <ul class="sub-menu">
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Divorce
+                  </a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Personal Injury<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Employment<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Immigration<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Family<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Property<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+              </ul>
             </li>
             <li class="nav-header__item">
               <a
-                href="../blog.html"
+                href="#!"
                 class="nav-header__link"
                 >Attorneys</a
               >
             </li>
             <li class="nav-header__item">
+              <input
+                type="radio"
+                name="mobile-submenu"
+                id="submenu-page"
+                class="submenu-toggle"
+              />
               <a
-                href="../contact.html"
+                href="#!"
                 class="nav-header__link"
-                >Page
+                >Page</a
+              >
+
+              <label
+                for="submenu-page"
+                class="submenu-arrow submenu-arrow--open"
+              >
                 <i class="fa-solid fa-angle-down"></i>
-              </a>
+              </label>
+              <label
+                for="submenu-reset"
+                class="submenu-arrow submenu-arrow--close"
+              >
+                <i class="fa-solid fa-angle-up"></i>
+              </label>
+
+              <ul class="sub-menu">
+                <li class="sub-menu__item">
+                  <a
+                    href="../blog.html"
+                    class="sub-menu__link"
+                    >Blog<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../contact.html"
+                    class="sub-menu__link"
+                    >Contact<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>

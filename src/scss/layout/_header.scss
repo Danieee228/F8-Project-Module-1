@@ -3,6 +3,8 @@
 
 .header {
   padding-top: 30px;
+  position: relative;
+  z-index: 999;
 
   .row {
     align-items: center;
@@ -22,10 +24,18 @@
     justify-content: space-between;
   }
 
-  &__item i {
-    font-size: 0.8rem;
-    translate: 0 -2px;
-    transition: transform 0.3s ease;
+  &__item {
+    position: relative;
+    i {
+      font-size: 0.8rem;
+      translate: 0 -2px;
+      transition: transform 0.3s ease;
+    }
+    &:hover .sub-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
   }
 
   &__link {
@@ -37,6 +47,46 @@
       color: $secondary;
       i {
         transform: rotate(180deg);
+      }
+    }
+  }
+
+  .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: $white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+
+    &__link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4px;
+
+      padding: 12px;
+      color: $black;
+      transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+
+      i {
+        translate: 0;
+        transition: transform 0.3s ease;
+      }
+      &:hover {
+        color: $secondary;
+        background-color: #f8f9fa;
+        i {
+          transform: translateX(3px);
+        }
       }
     }
   }
@@ -55,6 +105,25 @@
   }
 }
 
+.menu-checkbox {
+  display: none;
+}
+
+.hamburger-icon {
+  display: none;
+}
+
+.nav-wrapper {
+  display: block;
+}
+
+.nav-close {
+  display: none;
+}
+.nav-overlay {
+  display: none;
+}
+
 @include screen(xl) {
   .nav-header {
     &__list {
@@ -67,7 +136,105 @@
   .header .row {
     justify-content: space-between;
   }
+  .hamburger-icon {
+    display: block;
+  }
   .hamburger-icon i {
     font-size: 2.8rem;
+  }
+
+  .nav-wrapper {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    max-width: 80%;
+    height: 100vh;
+    background-color: $white;
+    padding: 100px 24px 24px;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 998;
+    overflow-y: auto;
+  }
+
+  .menu-checkbox:checked ~ .nav-wrapper {
+    transform: translateX(0);
+  }
+
+  .nav-header__list {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-header {
+    .sub-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      display: none;
+      padding-left: 16px;
+    }
+
+    &__item:hover .sub-menu {
+      display: block;
+    }
+  }
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 997;
+    cursor: pointer;
+  }
+
+  .menu-checkbox:checked ~ .nav-overlay {
+    display: block;
+  }
+
+  .nav-close {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .submenu-toggle {
+    display: none;
+  }
+
+  .submenu-arrow {
+    cursor: pointer;
+  }
+
+  .submenu-arrow--open {
+    display: block;
+  }
+  .submenu-arrow--close {
+    display: none;
+  }
+
+  .nav-header {
+    .sub-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      display: none;
+      padding-left: 16px;
+    }
+  }
+
+  .submenu-toggle:checked ~ .submenu-arrow--open {
+    display: none;
+  }
+  .submenu-toggle:checked ~ .submenu-arrow--close {
+    display: block;
+  }
+  .submenu-toggle:checked ~ .sub-menu {
+    display: block;
   }
 }
