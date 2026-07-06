@@ -128,6 +128,10 @@
   display: none;
 }
 
+.submenu-arrow {
+  display: none;
+}
+
 @include screen(xl) {
   .nav-header {
     &__list {
@@ -168,28 +172,6 @@
     transform: translateX(0);
   }
 
-  .nav-header__list {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .nav-header {
-    &__item {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .sub-menu {
-      position: static;
-      opacity: 1;
-      visibility: visible;
-      transform: none;
-      box-shadow: none;
-      display: none;
-      padding-left: 16px;
-    }
-  }
   .nav-overlay {
     display: none;
     position: fixed;
@@ -208,11 +190,49 @@
     justify-content: flex-end;
   }
 
-  .nav-header__link > i {
-    display: none;
+  .submenu-toggle:checked ~ .submenu-arrow i {
+    transform: rotate(180deg);
   }
-  .submenu-toggle {
-    display: none;
+
+  .submenu-toggle:checked ~ .sub-menu {
+    display: block;
+  }
+
+  .nav-header {
+    &__list {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__link {
+      // Cỡ mũi tên desktop dùng cho hover-dropdown, ẩn đi vì mobile dùng .submenu-arrow riêng
+      > i {
+        display: none;
+      }
+
+      &--nav {
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    .sub-menu {
+      flex-basis: 100%;
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      display: none;
+      padding-left: 16px;
+    }
   }
 
   .submenu-arrow {
@@ -221,6 +241,8 @@
     position: relative;
 
     &::before {
+      // Mở rộng vùng bấm ra hết chiều ngang màn hình để bắt sự kiện click
+      // trên toàn bộ hàng menu, không chỉ riêng icon mũi tên
       content: "";
       position: absolute;
       inset: 0;
@@ -235,30 +257,4 @@
       transition: transform 0.3s ease;
     }
   }
-
-  .nav-header__link--nav {
-    position: relative;
-    z-index: 1;
-  }
-  .nav-header {
-    .sub-menu {
-      flex-basis: 100%;
-      position: static;
-      opacity: 1;
-      visibility: visible;
-      transform: none;
-      box-shadow: none;
-      display: none;
-      padding-left: 16px;
-    }
-  }
-
-  .submenu-toggle:checked ~ .submenu-arrow i {
-    transform: rotate(180deg);
-  }
-
-  .submenu-toggle:checked ~ .sub-menu {
-    display: block;
-  }
-
 }
