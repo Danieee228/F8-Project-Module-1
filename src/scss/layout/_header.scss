@@ -124,6 +124,10 @@
   display: none;
 }
 
+.submenu-toggle {
+  display: none;
+}
+
 @include screen(xl) {
   .nav-header {
     &__list {
@@ -170,6 +174,12 @@
   }
 
   .nav-header {
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
     .sub-menu {
       position: static;
       opacity: 1;
@@ -178,10 +188,6 @@
       box-shadow: none;
       display: none;
       padding-left: 16px;
-    }
-
-    &__item:hover .sub-menu {
-      display: block;
     }
   }
   .nav-overlay {
@@ -201,23 +207,42 @@
     display: flex;
     justify-content: flex-end;
   }
+
+  .nav-header__link > i {
+    display: none;
+  }
   .submenu-toggle {
     display: none;
   }
 
   .submenu-arrow {
-    cursor: pointer;
-  }
-
-  .submenu-arrow--open {
     display: block;
-  }
-  .submenu-arrow--close {
-    display: none;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      left: -100vw;
+      right: 0;
+      z-index: 0;
+    }
+
+    i {
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
   }
 
+  .nav-header__link--nav {
+    position: relative;
+    z-index: 1;
+  }
   .nav-header {
     .sub-menu {
+      flex-basis: 100%;
       position: static;
       opacity: 1;
       visibility: visible;
@@ -228,13 +253,12 @@
     }
   }
 
-  .submenu-toggle:checked ~ .submenu-arrow--open {
-    display: none;
+  .submenu-toggle:checked ~ .submenu-arrow i {
+    transform: rotate(180deg);
   }
-  .submenu-toggle:checked ~ .submenu-arrow--close {
-    display: block;
-  }
+
   .submenu-toggle:checked ~ .sub-menu {
     display: block;
   }
+
 }
