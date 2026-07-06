@@ -3,6 +3,8 @@
 
 .header {
   padding-top: 30px;
+  position: relative;
+  z-index: 999;
 
   .row {
     align-items: center;
@@ -22,10 +24,18 @@
     justify-content: space-between;
   }
 
-  &__item i {
-    font-size: 0.8rem;
-    translate: 0 -2px;
-    transition: transform 0.3s ease;
+  &__item {
+    position: relative;
+    i {
+      font-size: 0.8rem;
+      translate: 0 -2px;
+      transition: transform 0.3s ease;
+    }
+    &:hover .sub-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
   }
 
   &__link {
@@ -37,6 +47,46 @@
       color: $secondary;
       i {
         transform: rotate(180deg);
+      }
+    }
+  }
+
+  .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: $white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+
+    &__link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4px;
+
+      padding: 12px;
+      color: $black;
+      transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+
+      i {
+        translate: 0;
+        transition: transform 0.3s ease;
+      }
+      &:hover {
+        color: $secondary;
+        background-color: #f8f9fa;
+        i {
+          transform: translateX(3px);
+        }
       }
     }
   }
@@ -55,6 +105,33 @@
   }
 }
 
+.menu-checkbox {
+  display: none;
+}
+
+.hamburger-icon {
+  display: none;
+}
+
+.nav-wrapper {
+  display: block;
+}
+
+.nav-close {
+  display: none;
+}
+.nav-overlay {
+  display: none;
+}
+
+.submenu-toggle {
+  display: none;
+}
+
+.submenu-arrow {
+  display: none;
+}
+
 @include screen(xl) {
   .nav-header {
     &__list {
@@ -67,7 +144,117 @@
   .header .row {
     justify-content: space-between;
   }
+  .hamburger-icon {
+    display: block;
+  }
   .hamburger-icon i {
     font-size: 2.8rem;
+  }
+
+  .nav-wrapper {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    max-width: 80%;
+    height: 100vh;
+    background-color: $white;
+    padding: 100px 24px 24px;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 998;
+    overflow-y: auto;
+  }
+
+  .menu-checkbox:checked ~ .nav-wrapper {
+    transform: translateX(0);
+  }
+
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 997;
+    cursor: pointer;
+  }
+
+  .menu-checkbox:checked ~ .nav-overlay {
+    display: block;
+  }
+
+  .nav-close {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .submenu-toggle:checked ~ .submenu-arrow i {
+    transform: rotate(180deg);
+  }
+
+  .submenu-toggle:checked ~ .sub-menu {
+    display: block;
+  }
+
+  .nav-header {
+    &__list {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &__item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__link {
+      // Cỡ mũi tên desktop dùng cho hover-dropdown, ẩn đi vì mobile dùng .submenu-arrow riêng
+      > i {
+        display: none;
+      }
+
+      &--nav {
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    .sub-menu {
+      flex-basis: 100%;
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      box-shadow: none;
+      display: none;
+      padding-left: 16px;
+    }
+  }
+
+  .submenu-arrow {
+    display: block;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+      // Mở rộng vùng bấm ra hết chiều ngang màn hình để bắt sự kiện click
+      // trên toàn bộ hàng menu, không chỉ riêng icon mũi tên
+      content: "";
+      position: absolute;
+      inset: 0;
+      left: -100vw;
+      right: 0;
+      z-index: 0;
+    }
+
+    i {
+      position: relative;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
   }
 }
