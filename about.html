@@ -35,8 +35,8 @@
   referrerpolicy="no-referrer"
 />
 
-    <script type="module" crossorigin src="/F8-Project-Module-1/assets/main-MG3mEbeh.js"></script>
-    <link rel="stylesheet" crossorigin href="/F8-Project-Module-1/assets/main-BNlo0YWd.css">
+    <script type="module" crossorigin src="/F8-Project-Module-1/assets/main-GhoeVebK.js"></script>
+    <link rel="stylesheet" crossorigin href="/F8-Project-Module-1/assets/main-BWqa7iXy.css">
   </head>
   <body>
     <main class="about-page">
@@ -46,17 +46,28 @@
 <header class="header">
   <div class="container">
     <div class="row">
+      <!-- Toggle checkbox -->
+      <input
+        type="checkbox"
+        id="menu-checkbox"
+        class="menu-checkbox"
+      />
       <!-- Hamburger menu -->
       <label
         for="menu-checkbox"
-        class="hamburger-icon d-none d-lg-block"
+        class="hamburger-icon"
       >
         <i class="fa-solid fa-bars"></i>
       </label>
+      <!-- Overlay -->
+      <label
+        for="menu-checkbox"
+        class="nav-overlay"
+      ></label>
       <!-- Logo -->
       <div class="col-1 d-lg-none">
         <a
-          href="!#"
+          href="#!"
           class="logo"
         >
           <img
@@ -67,15 +78,19 @@
         </a>
       </div>
       <!-- Navigation -->
-      <div
-        class="col-6 offset-2 col-xl-8 offset-xl-0 col-lg-7 offset-lg-1 d-lg-none"
-      >
+      <div class="nav-wrapper col-6 offset-2 col-xl-8 offset-xl-0">
+        <label
+          for="menu-checkbox"
+          class="nav-close"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </label>
         <nav class="nav-header">
           <ul class="nav-header__list">
             <li class="nav-header__item">
               <a
                 href="../index.html"
-                class="nav-header__link"
+                class="nav-header__link nav-header__link--nav"
               >
                 Home
                 <i class="fa-solid fa-angle-down"></i>
@@ -84,23 +99,79 @@
             <li class="nav-header__item">
               <a
                 href="../about.html"
-                class="nav-header__link"
+                class="nav-header__link nav-header__link--nav"
                 >About
                 <i class="fa-solid fa-angle-down"></i>
               </a>
             </li>
             <li class="nav-header__item">
               <a
-                href="../practice-area.html"
+                href="#!"
                 class="nav-header__link"
-                >Practice Areas
+              >
+                Practice Areas
                 <i class="fa-solid fa-angle-down"></i>
               </a>
+              <input
+                type="checkbox"
+                id="submenu-practice"
+                class="submenu-toggle"
+              />
+              <label
+                for="submenu-practice"
+                class="submenu-arrow"
+              >
+                <i class="fa-solid fa-angle-down"></i>
+              </label>
+              <ul class="sub-menu">
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Divorce
+                  </a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Personal Injury<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Employment<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Immigration<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Family<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../practice-area.html"
+                    class="sub-menu__link"
+                    >Property<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+              </ul>
             </li>
             <li class="nav-header__item">
               <a
-                href="../blog.html"
-                class="nav-header__link"
+                href="#!"
+                class="nav-header__link nav-header__link--nav"
                 >Attorneys</a
               >
             </li>
@@ -108,9 +179,37 @@
               <a
                 href="#!"
                 class="nav-header__link"
-                >Page
+              >
+                Page
                 <i class="fa-solid fa-angle-down"></i>
               </a>
+              <input
+                type="checkbox"
+                id="submenu-page"
+                class="submenu-toggle"
+              />
+              <label
+                for="submenu-page"
+                class="submenu-arrow"
+              >
+                <i class="fa-solid fa-angle-down"></i>
+              </label>
+              <ul class="sub-menu">
+                <li class="sub-menu__item">
+                  <a
+                    href="../blog.html"
+                    class="sub-menu__link"
+                    >Blog<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+                <li class="sub-menu__item">
+                  <a
+                    href="../contact.html"
+                    class="sub-menu__link"
+                    >Contact<i class="fa-solid fa-angle-right"></i
+                  ></a>
+                </li>
+              </ul>
             </li>
           </ul>
         </nav>
